@@ -63,7 +63,7 @@ int main()
             printf("\nO resultado é: %.2f", multiplicação(num1, num2));
             break;
         case 4:
-            printf("Digite os numeros que deseja subtrair: ");
+            printf("Digite os numeros que deseja dividir: ");
             scanf("%f %f", &num1, &num2);
             printf("\nO resultado é: %.2f", divisão(num1, num2));
             break;
