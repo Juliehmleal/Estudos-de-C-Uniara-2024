@@ -4,7 +4,7 @@
 
 void conversorTemperatura ()
 {
-    float celsius, fahrenheith;
+    float celsius=0, fahrenheith=0;
     int optemp;
 
     printf("Conversor de temperatura\n");
@@ -16,14 +16,14 @@ void conversorTemperatura ()
     {
         printf("Celsius: ");
         scanf("%f", &fahrenheith);
-        fahrenheith = (1.8*celsius) + 5;
+        fahrenheith = (1.8*celsius) + 32;
 
         printf("%.2f fahrenheit em Celsius tem como resultado: %.2f\n", celsius, fahrenheith);
     }
     if (optemp == 2)
     {
-        printf("Celsius: ");
-        scanf("%f", &celsius);
+        printf("Fahrenheit: ");
+        scanf("%f", &fahrenheith);
         celsius = (fahrenheith - 32)/1.8;
 
         printf("%.2f Celsius em fahrenheit tem como resultado: %.2f\n", fahrenheith, celsius);
@@ -118,7 +118,7 @@ void verificarCPF()
     {
         printf("%i", cpf[i]);
     }
-}
+}   
 
 void imprimir()
 {
