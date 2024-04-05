@@ -75,23 +75,79 @@ float somaSalario (Pessoa funcionario[], int numFuncionario)
     return soma;
 }
 
-float maiorSalario (Pessoa funcionario[], int numFuncionario)
+void maiorSalario (Pessoa funcionario[], int numFuncionario)
 {
-    int i;
+    int i, aux;
     float maior;
+    
+    maior = funcionario[0].salario;
 
-    for (i = 0; i < numFuncionario; i++)
+    for (i = 1; i < numFuncionario; i++)
     {
-        if (funcionario)
+        if (funcionario[i].salario > maior)
         {
-            /* code */
+            maior = funcionario[i].salario;
+            aux = i;
         }
-        
     }
-
-    return maior;
+    printf("\nFuncionario %s, possui o maior salario: %.2f\n", funcionario[aux].nome, maior);
 }
 
+void eliminarRegistro(Pessoa funcionarios[], int *y) {
+    int id;
+    printf("Digite o ID do funcionario que deseja eliminar: ");
+    scanf("%d", &id);
+
+    int indice = -1;
+    for (int i = 0; i < *y; i++) {
+        if (funcionarios[i].id == id) {
+            indice = i;
+            break;
+        }
+    }
+
+    if (indice != -1) {
+        for (int i = indice; i < *y - 1; i++) {
+            funcionarios[i] = funcionarios[i + 1];
+        }
+        (*y)--;
+        printf("Funcionario removido com sucesso!\n");
+    } else {
+        printf("Funcionario com ID %d nao encontrado.\n", id);
+    }
+}
+
+
+void menorSalario (Pessoa funcionario[], int numFuncionario)
+{
+    int i, aux;
+    float menor;
+    
+    menor = funcionario[0].salario;
+
+    for (i = 1; i < numFuncionario; i++)
+    {
+        if (funcionario[i].salario < menor)
+        {
+            menor = funcionario[i].salario;
+            aux = i;
+        }
+    }
+    printf("\nFuncionario %s, possui o maior salario: %.2f\n", funcionario[aux].nome, menor);
+}
+
+void aumentaSalario (Pessoa *funcionario, int numFuncionario)
+{
+    int i;
+
+    for(i=0; i < numFuncionario; i++)
+    {
+        if(funcionario[i].salario < 1000)
+        {
+            funcionario[i].salario = funcionario[i].salario*1.10;
+        }
+    }
+}
 
 
 void Imprimir () {
@@ -117,6 +173,8 @@ int main(){
 
     while (escolha!=0)
     {
+        //system(“clear”);
+        //system(“cls”); Windows
         Imprimir();
         scanf("%i", &escolha);
         switch (escolha)
@@ -133,8 +191,7 @@ int main(){
             break;
         
         case 3:
-            printf("\nteste");
-
+            eliminarRegistro(funcionario, &numFuncionario);
             break;
         
         case 4:
@@ -152,17 +209,17 @@ int main(){
             break;
         
         case 7:
-            printf("\nteste");
+            maiorSalario(funcionario, numFuncionario);
 
             break;
         
         case 8:
-            printf("\nteste");
+            menorSalario(funcionario, numFuncionario);
 
             break;
         
         case 9:
-            printf("\nteste");
+            aumentaSalario(funcionario, numFuncionario);
 
             break;
         
@@ -180,3 +237,5 @@ int main(){
 
     return 0;
 }
+
+
