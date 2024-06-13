@@ -1,0 +1,17 @@
+ID Voo: 123
+Companhia: Voe Azul
+Origem: São Paulo 
+Destino: Rio de Janeiro 
+Data: 20/06/2024
+Hora: 10:30
+Assentos Disponíveis: 20
+Preço: R$120,00
+
+ID Voo: 456
+Companhia: LATAM
+Origem: Brasília 
+Destino: Salvador 
+Data: 25/06/2024
+Hora: 15:00
+Assentos Disponíveis: 35
+Preço: R$180,00
